@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --bg-main:     #f8f9fc;
+    --bg-card:     #ffffff;
+    --bg-lift:     #f1f3fa;
+    --border:      #e2e6f0;
+    --accent:      #6366f1;      /* Modern Indigo */
+    --accent2:     #a855f7;      /* Purple accent */
+    --text-main:   #0f172a;
+    --text-muted:  #64748b;
+    --radius:      20px;
+}
+
+html, body, [class*="st-"] {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+}
+
+.stApp {
+    background: var(--bg-main) !important;
+}
+
+/* Sidebar - Modern Look */
+section[data-testid="stSidebar"] {
+    background: rgba(255,255,255,0.95) !important;
+    border-right: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+/* Tabs - Modern Pill Style */
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--bg-card);
+    border-radius: 9999px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 9999px;
+    font-weight: 600;
+    padding: 10px 24px;
+    font-size: 13.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Metrics - Elevated Cards */
+[data-testid="stMetric"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px);
+}
+[data-testid="stMetricValue"] {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px !important;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Download Button */
+.stDownloadButton button {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 14px 24px;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+    transition: all 0.3s ease;
+}
+.stDownloadButton button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* Page Header - Modern */
+.page-header {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 52px 40px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    position: relative;
+    overflow: hidden;
+}
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -30%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.page-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46px !important;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4f46e5, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 12px !important;
+}
+.page-header .subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Insight Cards */
+.q6-insight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.q6-stat {
+    background: var(--bg-lift);
+    border-radius: 16px;
+    padding: 18px 22px;
+}
+.q6-stat .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    color: var(--accent);
+}
